@@ -1,7 +1,6 @@
 import tkinter as tk
 import random
 
-# Загадываем число один раз при запуске
 secret = random.randint(1, 100)
 attempts = 0
 
@@ -46,10 +45,9 @@ def restart():
     restart_button.pack_forget()
     entry.focus()
 
-# --- Интерфейс ---
 root = tk.Tk()
 root.title("Угадай число")
-root.geometry("350x250+550+150")
+root.geometry("350x250")
 root.resizable(False, False)
 
 tk.Label(root, text="Угадай число от 1 до 100",
@@ -63,7 +61,6 @@ button = tk.Button(root, text="Проверить", command=check_guess,
                    font=("Arial", 12), width=15)
 button.pack(pady=5)
 
-# Enter тоже проверяет число
 root.bind("<Return>", lambda event: check_guess())
 
 result_label = tk.Label(root, text="Введи число и нажми «Проверить»",
